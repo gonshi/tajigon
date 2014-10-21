@@ -23,7 +23,7 @@
       }
       $( _this ).addClass( 'on' );
       _stop( $slideElm, -1 * ( parseInt( Math.random() * 
-                               2 ) + 1 ) * WIDTH, SPEED[ _id ] * 4 );
+                               2 ) + 1 ) * WIDTH, SPEED[ _id ] * 2 );
     } );
 
     /*-------------------------------------------
