@@ -1,0 +1,66 @@
+$width: 339px
+$yellow00: #ffdd44
+$yellow01: #d2b41e
+
+#wrapper
+  position: absolute
+  +trbl( 0, 0, 0, 0 )
+  width: $width 
+  height: 531px
+  margin: auto
+  overflow: hidden
+
+#head
+  $img: "head.jpg"
+  width: $width * 2 
+  height: 231px
+  +bg( $img )
+
+#nose
+  $img: "nose.jpg"
+  width: $width * 2 
+  height: 41px
+  +bg( $img )
+
+#mouth
+  $img: "mouth.jpg"
+  width: $width * 2 
+  height: 259px
+  +bg( $img )
+
+#buttons
+  position: absolute
+  +trbl( auto, 0, 30px, 0 )
+  width: 300px
+  height: 60px
+  margin: auto
+
+  .button
+    position: absolute
+    top: 0
+    width: 80px
+    height: 40px
+    background: $yellow00
+    border-radius: 30px
+    box-shadow: 3px 5px 0 0 $yellow01 
+
+    &:active
+      +translateX( 3px )
+      +translateY( 5px )
+      box-shadow: none
+
+    &.on
+      background: $yellow01
+      box-shadow: none
+      +translateX( 3px )
+      +translateY( 5px )
+
+    &.head
+      left: 0
+
+    &.nose
+      left: 50%
+      margin-left: -40px
+
+    &.mouth
+      right: 0
