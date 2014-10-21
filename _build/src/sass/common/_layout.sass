@@ -1,6 +1,8 @@
 $width: 339px
 $yellow00: #ffdd44
 $yellow01: #d2b41e
+$blue: #00d5d2
+$red: #cc0000
 
 #wrapper
   position: absolute
@@ -43,6 +45,7 @@ $yellow01: #d2b41e
     background: $yellow00
     border-radius: 30px
     box-shadow: 3px 5px 0 0 $yellow01 
+    cursor: pointer
 
     &:active
       +translateX( 3px )
@@ -64,3 +67,59 @@ $yellow01: #d2b41e
 
     &.mouth
       right: 0
+
+#balloon
+  display: none
+  position: absolute
+  +trbl( auto, 0, 20px, 0 )
+  width: 300px
+  height: 100px
+  margin: auto
+
+  background: #fff 
+  border-radius: 30px
+  border: solid 6px #000
+
+  &:before
+    position: absolute
+    +trbl( -27px, 0, auto, 0 )
+    width: 40px
+    height: 40px
+    margin: auto
+    background: #fff
+    border-top: solid 6px #000
+    border-left: solid 6px #000
+    content: ""
+    +rotate( 45deg )
+
+  &.show
+    display: block
+    +animation( show 1s ease 0s, fromTop 1s ease 0s )
+
+  .result
+    width: 250px
+    margin: 5px auto 0
+
+  .nameContainer
+    font-size: 22px
+    font-weight: bold
+    text-align: center
+
+  .buttons
+    width: 260px
+    margin: 0 auto
+    color: #fff
+    +clearfix
+
+    .message
+      float: left
+      color: #000
+      font-weight: bold
+      line-height: 26px
+
+    .retry
+      float: right
+      background: $red
+      padding: 3px 10px
+      font-size: 13px
+      border-radius: 8px
